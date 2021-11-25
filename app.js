@@ -16,11 +16,12 @@ app.post('/', (req, res) => {
         var filename = file.name
         console.log(filename)
 
-        file.mv('./uploads/'+filename, function (err) {
+        file.mv('./uploads/'+"new.png", function (err) {
             if(err) {
                 res.send(err)
             } else {
-                res.send("File Uploaded")
+                var filepath = 'C:/Users/kvd/AQR/Uploads/new.png'
+                res.sendFile(filepath)
             }
         })
     }
