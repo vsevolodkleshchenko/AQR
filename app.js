@@ -20,8 +20,8 @@ app.post('/', (req, res) => {
             if(err) {
                 res.send(err)
             } else {
-                var filepath = 'C:/Users/kvd/AQR/Uploads/new.png'
-                res.sendFile(filepath)
+                var filepath = '/uploads/new.png'
+                res.sendFile(__dirname + filepath);
             }
         })
     }
