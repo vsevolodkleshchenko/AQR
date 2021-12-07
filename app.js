@@ -11,8 +11,12 @@ app.use(upload())
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
-
-
+app.get('/ITMO_en.png', (req, res) => {
+    res.sendFile(__dirname + '/ITMO_en.png')
+})
+app.get('/coding-club.png', (req, res) => {
+    res.sendFile(__dirname + '/coding-club.png')
+})
 function saveFile(req) {
     const file = req.files.file
     const file_ext = file.name.slice(-4,file.name.length)
@@ -24,7 +28,7 @@ function saveFile(req) {
 function sendProcessedFile(res, filename) {
     const filepath = upload_path+'/'+filename
     const out_filename = filename.slice(0,-4)+'.png'
-    let result = exec('python3 read_qr.py '+'./'+filepath, (err, stdout, stderr) => {
+    let result = exec('python read_qr.py '+'./'+filepath, (err, stdout, stderr) => {
         if (err) { console.error(err) }
         else {
             const userString = stdout.slice(0,-1)
@@ -34,7 +38,7 @@ function sendProcessedFile(res, filename) {
                 res.sendFile(__dirname + '/'+filepath);
                 return
             }
-            exec('amzqr "'+userString+ '" -c -p ITMO_en.png -d '+download_path+' -n '+out_filename, (err, stdout, stderr) => {
+            exec('amzqr "'+userString+ '" -l M -c -p ITMO_en.png -d '+download_path+' -n '+out_filename, (err, stdout, stderr) => {
                 if (err) { console.error(err) }
                 else {
                     console.log(`stdout:`, stdout);
