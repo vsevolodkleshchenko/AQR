@@ -28,12 +28,8 @@
                     top: 30;
                     text-align: center;
                  }
-                 .input-group mb-3{
-                  color: yellow-300;
-                  padding: $spacer !important;
-                  }
-                  .navbar navbar-light{
-                   margin: auto;}
+
+
         </style>
      </head>
     <body>
@@ -48,15 +44,16 @@
         </nav>
           <div class="main">
                 <form method="POST" action="/" enctype="multipart/form-data">
-
-                   <div class="input-group mt-3">
-                      <input type="file" class="form-control" id="inputGroup-sizing-lg" name="file">
+                    <div class="input-group mt-3">
+                      <lable class="input-group-text" id="basic-addon1">Upload</lable>
+                      <input type="file" class="form-control" id="inputGroup-sizing-lg" name="file" placeholder="Upload the picture of your QR-code here" aria-label="Upload the picture of your QR-code here">
                     </div>
 
-                      <div class="d-flex justify-content-center mt-3">
-                          <button type="submit" class="btn btn-outline-dark btn-center" style="background-color: #FDD106;">Cоздать красивый QR-code</button>
-                      </div>
 
+                    <div class="d-flex justify-content-center mt-3 mb-3">
+                        <button type="submit" class="btn btn-outline-dark btn-center" style="background-color: #FDD106;">Do amazing QR</button>
+                    </div>
+  <center style="front-style: italic"> We don't ensure that it will be readable everywhwere, so don't bet only on your amazing QR. Good luck!</center>
                 </form>
           </div>
     </body>
