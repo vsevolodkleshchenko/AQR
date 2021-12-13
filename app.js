@@ -1,3 +1,4 @@
+#!/usr/bin/env nodejs
 const express = require('express')
 const upload = require('express-fileupload')
 const { exec } = require('child_process');
