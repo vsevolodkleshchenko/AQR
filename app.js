@@ -29,7 +29,7 @@ function saveFile(req) {
 function sendProcessedFile(res, filename) {
     const filepath = upload_path+'/'+filename
     const out_filename = filename.slice(0,-4)+'.png'
-    let result = exec('python read_qr.py '+'./'+filepath, (err, stdout, stderr) => {
+    let result = exec('python3 read_qr.py '+'./'+filepath, (err, stdout, stderr) => {
         if (err) { console.error(err) }
         else {
             const userString = stdout.slice(0,-1)
