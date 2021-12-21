@@ -16,7 +16,7 @@ app.get('/ITMO_en.png', (req, res) => {
     res.sendFile(__dirname + '/ITMO_en.png')
 })
 app.get('/coding-club.png', (req, res) => {
-    res.sendFile(__dirname + '/coding-club.png')
+    res.sendFile(__dirname + '/coding-club.jpg')
 })
 function saveFile(req) {
     const file = req.files.file
